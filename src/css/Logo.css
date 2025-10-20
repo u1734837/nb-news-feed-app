@@ -1,0 +1,22 @@
+.logo-container {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #61dafb;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px rgba(97, 218, 251, 0.4);
+    user-select: none;
+    z-index: 200;
+  }
+  
+  .logo-letter {
+    display: inline-block;
+    margin: 0 2px;
+  }
+  
