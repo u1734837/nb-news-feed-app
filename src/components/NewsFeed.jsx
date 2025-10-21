@@ -14,8 +14,8 @@ const NewsFeed = ({ tab }) => {
             "https://feeds.bbci.co.uk/sport/tennis/rss.xml",
             "https://feeds.bbci.co.uk/sport/football/rss.xml"
           ],
-          music: ["https://rss.nytimes.com/services/xml/rss/nyt/Music.xml"],
-          random: ["https://rss.nytimes.com/services/xml/rss/nyt/Science.xml"],
+          music: ["https://www.edmprod.com/feed/"],
+          random: ["https://investor.gopro.com/rss/pressrelease.aspx"],
         };
 
         const urls = feedMap[tab] || [];
@@ -27,6 +27,7 @@ const NewsFeed = ({ tab }) => {
         const xmlText = await res.text();
         const parser = new DOMParser();
         const xml = parser.parseFromString(xmlText, "application/xml");
+        const channelImage = xml.querySelector("channel > image > url")?.textContent;
 
         const items = [...xml.querySelectorAll("item")].map((item) => {
             const pubDate = item.querySelector("pubDate")?.textContent || null;
@@ -62,7 +63,7 @@ const NewsFeed = ({ tab }) => {
             }
           
             // Final fallback
-            if (!imageUrl) imageUrl = "https://placehold.co/600x300?text=News+Image";
+            if (!imageUrl) imageUrl = channelImage || "https://placehold.co/600x300?text=News+Image";
           
             return {
               title: item.querySelector("title")?.textContent || "No title",
