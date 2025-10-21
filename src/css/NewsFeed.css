@@ -6,7 +6,7 @@
     margin-block-start: 60px;
   }
   .loading-text {
-    text-align: center;
+    align-items: center;
     color: #888;
     font-size: 1rem;
   }

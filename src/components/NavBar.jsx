@@ -1,21 +1,24 @@
 import "../css/NavBar.css";
 import { Home, Disc3, FerrisWheel } from "lucide-react"; 
 
-const NavBar = () => {
+const NavBar = ({ tab, setTab }) => {
   return (
     <nav className="navbar">
-      <a href="#" className="nav-item">
+      <button className={`nav-item ${tab === "sports" ? "active" : ""}`} 
+      onClick={() => setTab("sports")}>
         <Home size={22} />
-        <span>NathanGram</span>
-      </a>
-      <a href="#" className="nav-item">
+        <span>Sports</span>
+      </button>
+      <button className={`nav-item ${tab === "music" ? "active" : ""}`} 
+      onClick={() => setTab("music")}>
         <Disc3 size={22} />
-        <span>Tab2</span>
-      </a>
-      <a href="#" className="nav-item">
+        <span>Music</span>
+      </button>
+      <button className={`nav-item ${tab === "random" ? "active" : ""}`}
+       onClick={() => setTab("random")}>
         <FerrisWheel size={22} />
-        <span>Tab3</span>
-      </a>
+        <span>Random</span>
+      </button>
     </nav>
   )
 }
