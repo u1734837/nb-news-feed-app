@@ -1,0 +1,13 @@
+.news-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    margin-block-start: 60px;
+  }
+  .loading-text {
+    text-align: center;
+    color: #888;
+    font-size: 1rem;
+  }
+  

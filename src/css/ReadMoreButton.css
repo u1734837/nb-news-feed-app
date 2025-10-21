@@ -1,0 +1,16 @@
+.read-more-btn {
+    background-color: #61dafb;
+    color: #20232a;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .read-more-btn:hover {
+    background-color: #4fc0e3;
+    transform: translateY(-2px);
+  }
+  
